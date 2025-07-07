@@ -58,7 +58,7 @@ A fun, lightweight, and real-time group chat experience for random and topic-bas
 | Layer      | Technology Used            |
 |------------|-----------------------------|
 | Frontend   | React (Vite)                |
-| Routing    | React Router            |
+| Routing    | React Router                |
 | WebSocket  | STOMP.js + SockJS           |
 | Backend    | Spring Boot (Java)          |
 | Database   | MongoDB                     |
@@ -74,13 +74,13 @@ A high-level view of how components communicate:
 ```
   ┌────────────┐       REST API      ┌──────────────┐
   │  Frontend  │  ───────────────▶   │ Spring Boot  │
-  │ (React.js) │                    │  Backend     │
+  │ (React.js) │                     │  Backend     │
   └────────────┘       WebSocket     └──────────────┘
         │     ◀──── STOMP/SockJS ─────▶     │
-        │                                ▼
+        │                                   ▼
         │                         ┌────────────┐
-        └──────────────────────▶ │  MongoDB    │
-                                 └────────────┘
+        └──────────────────────▶  │  MongoDB   │
+                                  └────────────┘
 ```
 
 ---
@@ -130,14 +130,14 @@ These messages are stored as embedded documents in the corresponding room.
 
 ###  Frontend (Vite + React)
 ```bash
-cd frontend
+cd chat-app-frontend
 npm install
 npm run dev
 ```
 
 ### ⚙️ Backend (Spring Boot)
 ```bash
-cd backend
+cd chat-app-backend
 ./mvnw spring-boot:run
 ```
 
